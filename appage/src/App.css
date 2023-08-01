@@ -1,5 +1,5 @@
 main {
-  background-color: rgb(247, 218, 183);
+  background-color: #f0f0f0;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -10,10 +10,9 @@ main {
 main ul.content {
   list-style: none;
   background-color: white;
-  border: 1px solid rebeccapurple;
-  padding: 1rem;
+  padding: 2rem 1rem;
+
   border-radius: 20px 20px 60px 20px;
-  height: 60%;
 }
 
 main ul.content li form {
@@ -27,12 +26,46 @@ main ul.content li form {
 main ul.content li form label {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   width: 35%;
+  font-weight: bold;
 }
 
 main ul.content li form label input {
   border-radius: 5px;
   box-shadow: none;
-  border: 1px solid grey;
+  border: 1px solid #d6d6d6;
   height: 2rem;
+}
+
+li.line {
+  margin-top: 4rem;
+  width: 100%;
+  height: 60px;
+}
+
+li.line hr {
+  border: 1px solid #d6d6d6;
+}
+
+li.line img {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  bottom: 50px;
+  right: -37.5%;
+}
+
+li.datos ul {
+  list-style: none;
+}
+
+li.datos ul li {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+li.datos ul li em {
+  font-style: normal;
+  color: #884df3;
 }

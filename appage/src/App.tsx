@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [age, setAge] = useState({ years: 0, months: 0, days: 0 });
+  const [error, setError] = useState("");
   const dayRef: RefObject<HTMLInputElement> = useRef(null);
   const monthRef: RefObject<HTMLInputElement> = useRef(null);
   const yearRef: RefObject<HTMLInputElement> = useRef(null);
@@ -12,7 +13,16 @@ function App() {
     const month = parseInt(monthRef.current?.value || "1");
     const year = parseInt(yearRef.current?.value || "1900");
 
-    // Calculate age based on the current date
+    if (day > 31) {
+      setError("Día no válido");
+    } else if (month > 12) {
+      setError("Mes no válido");
+    } else if (year < 1990) {
+      setError("Año no válido de 1990 en adelante");
+    } else {
+      setError("");
+    }
+
     const currentDate = new Date();
     const birthDate = new Date(year, month - 1, day);
     const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
@@ -67,15 +77,26 @@ function App() {
                 />
               </label>
             </form>
+            {error !== "" ? <p>{error} </p> : ""}
           </li>
-          <li>
-            <img src="./icon-arrow.svg" alt="flecha" />
+          <li className="line">
+            <hr />
+            <img src="/flecha2.png" alt="flecha" />
           </li>
-          <li>
+          <li className="datos">
             <ul>
-              <li>{`${age.years} years`}</li>
-              <li>{`${age.months} months`}</li>
-              <li>{`${age.days} days`}</li>
+              <li>
+                <em>{age.years} </em>
+                {` years`}
+              </li>
+              <li>
+                <em>{age.months} </em>
+                {` months`}
+              </li>
+              <li>
+                <em>{age.days} </em>
+                {` days`}
+              </li>
             </ul>
           </li>
         </ul>
