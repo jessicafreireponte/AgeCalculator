@@ -1,19 +1,10 @@
-#root {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 main {
   background-color: rgb(247, 218, 183);
   width: 100%;
-  height: 100%;
-  padding: 1rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main ul.content {
@@ -22,6 +13,7 @@ main ul.content {
   border: 1px solid rebeccapurple;
   padding: 1rem;
   border-radius: 20px 20px 60px 20px;
+  height: 60%;
 }
 
 main ul.content li form {
