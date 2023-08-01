@@ -29,6 +29,8 @@ main ul.content li form label {
   gap: 10px;
   width: 35%;
   font-weight: bold;
+  letter-spacing: 5px;
+  color: #424242;
 }
 
 main ul.content li form label input {
