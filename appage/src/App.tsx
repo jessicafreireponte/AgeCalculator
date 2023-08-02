@@ -86,16 +86,16 @@ function App() {
           <li className="datos">
             <ul>
               <li>
-                <em>{age.years} </em>
-                {` years`}
+                {error === "" ? <em> {age.days} </em> : <em> -- </em>}
+                {` days`}
               </li>
               <li>
-                <em>{age.months} </em>
+                {error === "" ? <em> {age.months} </em> : <em> -- </em>}
                 {` months`}
               </li>
               <li>
-                <em>{age.days} </em>
-                {` days`}
+                {error === "" ? <em> {age.years} </em> : <em> -- </em>}
+                {` years`}
               </li>
             </ul>
           </li>
